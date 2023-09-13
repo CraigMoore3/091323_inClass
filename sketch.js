@@ -9,12 +9,12 @@ function setup() {
 function draw() {
   background(125);
   ellipse(x, height/2, 40);
-  if (x >= width) {
+  if (x >= width || x<=0) {
     speed = speed * -1;
   }
-  if (x <= 0) {
-    speed = speed * -1;
-  }
+  // if (x <= 0) {
+  //   speed = speed * -1;
+  // }
   x = x + speed;
 }
 
