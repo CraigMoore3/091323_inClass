@@ -1,10 +1,13 @@
 let ellipsePosition = 200;
 let ellipseSpeed = 4;
+let ellipseColor = (0,0,0);
 let diameter = 40;
 
 let rectPosition = 20;
 let rectSize = 20;
+let rectColor = (255, 255, 255);
 let rectSpeed = 6;
+
 
 let clickState = false;
 
@@ -13,16 +16,19 @@ function setup() {
 }
 
 function draw() {
-
+  let rColor = random(255);
   background(125);
-
+  
+  fill(rectColor);
   rect(rectPosition, height/3,rectSize);
   rectSlide();
 
+  fill(ellipseColor);
   ellipse(ellipsePosition, height/2, diameter);
 
   if (mouseIsPressed) {
     let clickState = true;
+    ellipseColor = (rColor);
     console.log("Mouse is clicked", clickState);
     pingPong();
   }
