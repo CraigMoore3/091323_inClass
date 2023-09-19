@@ -1,6 +1,11 @@
-let x = 200;
-let speed = 4;
+let ellipsePosition = 200;
+let ellipseSpeed = 4;
 let diameter = 40;
+
+let rectPosition = 20;
+let rectSize = 20;
+let rectSpeed = 6;
+
 let clickState = false;
 
 function setup() {
@@ -8,9 +13,13 @@ function setup() {
 }
 
 function draw() {
-  
+
   background(125);
-  ellipse(x, height/2, diameter);
+
+  rect(rectPosition, height/3,rectSize);
+  rectSlide();
+
+  ellipse(ellipsePosition, height/2, diameter);
 
   if (mouseIsPressed) {
     let clickState = true;
@@ -24,8 +33,15 @@ function draw() {
 }
 
 function pingPong() {
-  if (x >= width || x<=0) {
-    speed = speed * -1;
+  if (ellipsePosition >= width || ellipsePosition<=0) {
+    ellipseSpeed *= -1;
   }
-  x = x + speed;
+  ellipsePosition += ellipseSpeed;
+}
+
+function rectSlide () {
+  if (rectPosition >= width || rectPosition <= 0) {
+    rectSpeed *= -1;
+  }
+  rectPosition += rectSpeed;
 }
