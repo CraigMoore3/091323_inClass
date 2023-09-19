@@ -25,7 +25,6 @@ function draw() {
   ellipse(ellipsePosition, height/2, diameter);
 
   checkForInput();
-  
 }
 
 function pingPong() {
@@ -43,9 +42,7 @@ function rectSlide () {
 }
 
 function checkForInput() {
-  
   let rColor = random(255);
-
   if (mouseIsPressed) {
     let clickState = true;
     ellipseColor = (rColor);
@@ -54,6 +51,6 @@ function checkForInput() {
   }
   else {
     let clickState = false;
-    console.log("Mouse is no longer clicked", clickState);
+    console.log("Mouse is not clicked", clickState);
   }
 }
