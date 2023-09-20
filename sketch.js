@@ -17,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-  
+  // After watching the videos, I can see what I was doing wrong.
   backgroundChange();
 
   fill(rectColor);
