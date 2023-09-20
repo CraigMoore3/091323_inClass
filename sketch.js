@@ -9,14 +9,17 @@ let rectPosition = 20;
     rectSpeed = 6;
 
 let clickState = false;
+    backgroundColor = (125);
 
 function setup() {
   createCanvas(400, 400);
+
 }
 
 function draw() {
-  background(125);
   
+  backgroundChange();
+
   fill(rectColor);
   rect(rectPosition, height/3,rectSize);
   rectSlide();
@@ -52,5 +55,21 @@ function checkForInput() {
   else {
     let clickState = false;
     console.log("Mouse is not clicked", clickState);
+  }
+}
+
+function backgroundChange() {
+  let time = millis();
+  let r = random(0, 255);
+      g = random(0, 255);
+      b = random(0, 255);
+
+  if ((time >= 1) && (time <= 3)) {
+    console.log("It's been 10 seconds!");
+    backgroundColor = color(r,g,b);
+    background(backgroundColor);
+    }
+  else {
+    background(backgroundColor);
   }
 }
